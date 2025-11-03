@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neitor Tienda</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🖤 Neitor Tienda</title>
 
   <!-- 🔤 Tipografía -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
   <!-- 🎨 Estilos -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -17,61 +17,17 @@
     <h1>🖤 Neitor Tienda</h1>
   </header>
 
-  <main class="contenedor-productos">
-
-    <!-- 🧢 Ejemplo de producto con varias imágenes -->
-    <div class="producto">
-      <div class="carousel">
-        <img src="img/remera1-1.jpg" class="active" alt="Remera negra 1">
-        <img src="img/remera1-2.jpg" alt="Remera negra 2">
-        <img src="img/remera1-3.jpg" alt="Remera negra 3">
-        <button class="prev">‹</button>
-        <button class="next">›</button>
-      </div>
-      <h3>Remera Negra</h3>
-      <p class="precio">$8000</p>
-      <a href="https://wa.me/54911XXXXXXXXX" target="_blank" class="btn-whatsapp">Comprar</a>
-    </div>
-
-    <!-- 🩳 Agregá más productos copiando este bloque -->
-    <div class="producto">
-      <div class="carousel">
-        <img src="img/pantalon1-1.jpg" class="active" alt="Pantalón 1">
-        <img src="img/pantalon1-2.jpg" alt="Pantalón 2">
-        <img src="img/pantalon1-3.jpg" alt="Pantalón 3">
-        <button class="prev">‹</button>
-        <button class="next">›</button>
-      </div>
-      <h3>Pantalón Oversize</h3>
-      <p class="precio">$12000</p>
-      <a href="https://wa.me/54911XXXXXXXXX" target="_blank" class="btn-whatsapp">Comprar</a>
-    </div>
-
+  <!-- 🧢 Contenedor dinámico -->
+  <main id="productos" class="contenedor-productos">
+    <!-- Los productos del JSON se cargarán automáticamente -->
   </main>
 
   <footer>
     <p>© 2025 Neitor. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- 🧠 Script del carrusel -->
-  <script>
-  document.querySelectorAll('.carousel').forEach(carousel => {
-    let index = 0;
-    const images = carousel.querySelectorAll('img');
-    const showImage = (i) => {
-      images.forEach(img => img.classList.remove('active'));
-      images[i].classList.add('active');
-    };
-    carousel.querySelector('.next').onclick = () => {
-      index = (index + 1) % images.length;
-      showImage(index);
-    };
-    carousel.querySelector('.prev').onclick = () => {
-      index = (index - 1 + images.length) % images.length;
-      showImage(index);
-    };
-  });
-  </script>
-
+  <!-- ⚙️ Script principal -->
+  <script src="script.js"></script>
 </body>
 </html>
+
