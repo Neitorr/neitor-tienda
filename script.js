@@ -12,7 +12,8 @@ async function cargarProductos() {
       card.innerHTML = `
         <img src="${prod.image}" alt="${prod.name}">
         <h3>${prod.name}</h3>
-        <p>${prod.price}</p>
+        <p class="precio">${prod.price}</p>
+        <a href="https://wa.me/54911XXXXXXXXX" target="_blank" class="btn-whatsapp">Comprar</a>
       `;
       contenedor.appendChild(card);
     });
