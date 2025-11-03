@@ -36,6 +36,7 @@ header {
   overflow: hidden;
   transition: transform 0.25s ease-in-out, box-shadow 0.25s;
   text-align: center;
+  cursor: pointer;
 }
 
 .producto:hover {
@@ -89,3 +90,76 @@ footer {
   border-top: 1px solid #222;
 }
 
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #111;
+  border-radius: 16px;
+  padding: 25px;
+  width: 90%;
+  max-width: 700px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+.cerrar {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-carousel {
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: none;
+  border-radius: 10px;
+}
+
+.carousel-images img.active {
+  display: block;
+}
+
+.modal-carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 22px;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-carousel .prev { left: 10px; }
+.modal-carousel .next { right: 10px; }
+
+#modalDescripcion {
+  font-size: 15px;
+  color: #ccc;
+  margin: 15px 0 5px;
+}
