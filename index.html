@@ -26,7 +26,22 @@
     <p>© 2025 Neitor. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- ⚙️ Script principal -->
+  <!-- 🪟 Modal de producto -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="cerrarModal" class="cerrar">&times;</span>
+      <div class="modal-carousel">
+        <button class="prev">‹</button>
+        <div class="carousel-images"></div>
+        <button class="next">›</button>
+      </div>
+      <h2 id="modalNombre"></h2>
+      <p id="modalDescripcion"></p>
+      <p id="modalPrecio" class="precio"></p>
+      <a id="modalBtn" href="#" target="_blank" class="btn-whatsapp">Comprar por WhatsApp</a>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
