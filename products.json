@@ -1,17 +1,22 @@
 [
-  {
-    "name": "JEAN COOGI WIDE",
-    "price": "$80.000",
-    "image": "img/PANTALON_COOGI.jpeg"
-  },
-  {
-    "name": "Buzo Hoodie Beige",
-    "price": "$25.000",
-    "image": "https://via.placeholder.com/300x300.png?text=Buzo+Beige"
-  },
-  {
-    "name": "Campera Puffer Azul",
-    "price": "$40.000",
-    "image": "https://via.placeholder.com/300x300.png?text=Campera+Azul"
-  }
+  { "name": "JEAN COOGI WIDE", "price": "$80.000", "image": "img/PANTALON_COOGI.jpeg" },
+  { "name": "Buzo Hoodie Beige", "price": "$25.000", "image": "https://via.placeholder.com/300x300.png?text=Buzo+Beige" },
+  { "name": "Campera Puffer Azul", "price": "$40.000", "image": "https://via.placeholder.com/300x300.png?text=Puffer+Azul" },
+  { "name": "Remera Negra Oversize", "price": "$15.000", "image": "https://via.placeholder.com/300x300.png?text=Remera+Negra" },
+  { "name": "Remera Blanca Básica", "price": "$14.000", "image": "https://via.placeholder.com/300x300.png?text=Remera+Blanca" },
+  { "name": "Campera Cargo Verde", "price": "$38.000", "image": "https://via.placeholder.com/300x300.png?text=Campera+Verde" },
+  { "name": "Jean Cargo Oscuro", "price": "$42.000", "image": "https://via.placeholder.com/300x300.png?text=Jean+Cargo" },
+  { "name": "Short Nylon Negro", "price": "$19.000", "image": "https://via.placeholder.com/300x300.png?text=Short+Nylon" },
+  { "name": "Pantalón Beige Oversize", "price": "$35.000", "image": "https://via.placeholder.com/300x300.png?text=Pantalon+Beige" },
+  { "name": "Campera Puffer Negra", "price": "$39.000", "image": "https://via.placeholder.com/300x300.png?text=Puffer+Negra" },
+  { "name": "Remera Estampada Flames", "price": "$17.000", "image": "https://via.placeholder.com/300x300.png?text=Remera+Flames" },
+  { "name": "Buzo Negro Oversize", "price": "$29.000", "image": "https://via.placeholder.com/300x300.png?text=Buzo+Negro" },
+  { "name": "Campera Jean Celeste", "price": "$34.000", "image": "https://via.placeholder.com/300x300.png?text=Campera+Jean" },
+  { "name": "Remera Vintage Beige", "price": "$18.000", "image": "https://via.placeholder.com/300x300.png?text=Remera+Vintage" },
+  { "name": "Pantalón Denim Claro", "price": "$37.000", "image": "https://via.placeholder.com/300x300.png?text=Denim+Claro" },
+  { "name": "Buzo con Capucha Gris", "price": "$26.000", "image": "https://via.placeholder.com/300x300.png?text=Buzo+Gris" },
+  { "name": "Camisa Oversize Blanca", "price": "$28.000", "image": "https://via.placeholder.com/300x300.png?text=Camisa+Blanca" },
+  { "name": "Remera Gráfica Neitor", "price": "$20.000", "image": "https://via.placeholder.com/300x300.png?text=Remera+Neitor" },
+  { "name": "Campera Bomber Negra", "price": "$45.000", "image": "https://via.placeholder.com/300x300.png?text=Bomber+Negra" },
+  { "name": "Pantalón Cargo Marrón", "price": "$36.000", "image": "https://via.placeholder.com/300x300.png?text=Cargo+Marron" }
 ]
