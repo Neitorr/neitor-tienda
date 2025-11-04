@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Tienda - E-commerce</title>
+    <title>Neitor Tienda</title>
     <style>
         * {
             margin: 0;
@@ -41,6 +41,7 @@
             font-weight: bold;
             color: #000;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .nav-links {
@@ -112,8 +113,7 @@
             margin-top: 70px;
             height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-           
-            /* 👆 CAMBIA ESTA IMAGEN POR TU FOTO PRINCIPAL */
+                        url('https://via.placeholder.com/1920x1080/2d3436/ffffff?text=TU+IMAGEN+HERO');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -133,6 +133,15 @@
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
+        }
+
+        /* PÁGINAS */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
         }
 
         /* NEW ARRIVALS */
@@ -205,6 +214,147 @@
             font-weight: bold;
         }
 
+        /* PÁGINA DE DETALLE DEL PRODUCTO */
+        .product-detail {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 70px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #ff6b6b;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .thumbnail-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border 0.3s;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: #ff6b6b;
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .product-details h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .product-details .prices {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .product-details .original-price {
+            font-size: 1.5rem;
+        }
+
+        .product-details .discount-price {
+            font-size: 2.5rem;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .unique-item {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
+            color: #856404;
+            font-weight: 600;
+        }
+
+        .buy-btn {
+            background: #000;
+            color: white;
+            padding: 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .buy-btn:hover {
+            background: #333;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+        }
+
         /* FOOTER */
         footer {
             background: #1a1a1a;
@@ -264,12 +414,16 @@
                 font-size: 2rem;
             }
 
-            .hero p {
-                font-size: 1rem;
+            .product-container {
+                grid-template-columns: 1fr;
             }
 
-            .section-title {
-                font-size: 1.8rem;
+            .main-image {
+                height: 400px;
+            }
+
+            .thumbnail-container {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -278,166 +432,246 @@
     <!-- HEADER -->
     <header>
         <nav>
-            <a href="#" class="logo">TU MARCA</a>
+            <a href="#" class="logo" onclick="showHome()">♥ Neitor Tienda</a>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#" onclick="showHome()">Inicio</a></li>
                 <li class="dropdown">
-                    <a href="#productos">Productos ▾</a>
+                    <a href="#">Productos ▾</a>
                     <div class="dropdown-content">
-                        <a href="#camperas">Camperas</a>
-                        <a href="#buzos">Buzos</a>
-                        <a href="#remeras">Remeras</a>
-                        <a href="#pantalones">Pantalones</a>
-                        <a href="#accesorios">Accesorios</a>
+                        <a href="#">Camperas</a>
+                        <a href="#">Buzos</a>
+                        <a href="#">Remeras</a>
+                        <a href="#">Pantalones</a>
+                        <a href="#">Accesorios</a>
                     </div>
                 </li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#info">Info</a></li>
-                <li><a href="#cuenta" class="account-btn">Mi Cuenta</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Info</a></li>
+                <li><a href="#" class="account-btn">Mi Cuenta</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div>
-            <h1>Nueva Colección</h1>
-            <p>Las mejores prendas para tu estilo</p>
-        </div>
-    </section>
+    <!-- PÁGINA HOME -->
+    <div id="homePage" class="page active">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div>
+                <h1>Nueva Colección</h1>
+                <p>Ropa streetwear · Oversize · Limitada</p>
+            </div>
+        </section>
 
-    <!-- NEW ARRIVALS -->
-    <section class="new-arrivals">
-        <h2 class="section-title">New Arrivals</h2>
-        <div class="products-grid">
+        <!-- NEW ARRIVALS -->
+        <section class="new-arrivals">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="products-grid">
+                
+                <!-- PRODUCTO 1 - JEAN -->
+                <div class="product-card" onclick="showProduct(1)">
+                    <img src="images/jean1.jpg" alt="Jean Baggy Coogi" class="product-image">
+                    <!-- 👆 CAMBIA "jean1.jpg" por el nombre de tu foto -->
+                    <div class="product-info">
+                        <h3 class="product-name">JEAN BAGGY COOGI</h3>
+                        <div class="product-prices">
+                            <span class="original-price">$120.000</span>
+                            <span class="discount-price">$100.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 2 - BUZO -->
+                <div class="product-card" onclick="showProduct(2)">
+                    <img src="images/buzo1.jpg" alt="Buzo Oversized" class="product-image">
+                    <!-- 👆 CAMBIA "buzo1.jpg" por el nombre de tu foto -->
+                    <div class="product-info">
+                        <h3 class="product-name">BUZO OVERSIZED STREETWEAR</h3>
+                        <div class="product-prices">
+                            <span class="original-price">$45.990</span>
+                            <span class="discount-price">$38.990</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTO 3 - CAMPERA -->
+                <div class="product-card" onclick="showProduct(3)">
+                    <img src="images/campera1.jpg" alt="Campera" class="product-image">
+                    <!-- 👆 CAMBIA "campera1.jpg" por el nombre de tu foto -->
+                    <div class="product-info">
+                        <h3 class="product-name">CAMPERA DENIM CLASSIC</h3>
+                        <div class="product-prices">
+                            <span class="original-price">$89.990</span>
+                            <span class="discount-price">$79.990</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Puedes agregar más productos aquí -->
+
+            </div>
+        </section>
+    </div>
+
+    <!-- PÁGINA DE DETALLE PRODUCTO 1 - JEAN -->
+    <div id="productPage1" class="page">
+        <section class="product-detail">
+            <a href="#" class="back-btn" onclick="showHome()">← Volver a productos</a>
             
-            <!-- PRODUCTO 1 -->
-            <!-- 👇 CAMBIA ESTA IMAGEN POR TU PRENDA -->
-            <div class="product-card">
-                <img src="img/PANTALON_COOGI.jpg" alt="Producto 1" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-name">JEAN BAGGY COOGI</h3>
-                    <div class="product-prices">
+            <div class="product-container">
+                <div class="product-gallery">
+                    <img id="img/PANTALON_COOGI.jpg" src="img/PANTALON_COOGI.jpg.jpg" alt="Jean principal" class="main-image">
+                    <!-- 👆 CAMBIA estas imágenes por tus fotos del jean desde diferentes ángulos -->
+                    
+                    <div class="thumbnail-container">
+                        <img src="images/jean1.jpg" alt="Vista 1" class="thumbnail active" onclick="changeImage('mainImg1', 'images/jean1.jpg', this)">
+                        <img src="images/jean1-2.jpg" alt="Vista 2" class="thumbnail" onclick="changeImage('mainImg1', 'images/jean1-2.jpg', this)">
+                        <img src="images/jean1-3.jpg" alt="Vista 3" class="thumbnail" onclick="changeImage('mainImg1', 'images/jean1-3.jpg', this)">
+                        <img src="images/jean1-4.jpg" alt="Vista 4" class="thumbnail" onclick="changeImage('mainImg1', 'images/jean1-4.jpg', this)">
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <h1>JEAN BAGGY COOGI</h1>
+                    <div class="prices">
                         <span class="original-price">$120.000</span>
                         <span class="discount-price">$100.000</span>
                     </div>
+                    
+                    <div class="unique-item">
+                        ⚡ PRENDA ÚNICA - Edición limitada
+                    </div>
+
+                    <p class="product-description">
+                        Jean baggy estilo años 90 con corte amplio y cómodo. Perfecto para un look streetwear relajado. 
+                        Confeccionado en denim de alta calidad con detalles de costuras contrastantes.
+                        100% algodón. Diseño oversize.
+                    </p>
+
+                    <a href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20el%20JEAN%20BAGGY%20COOGI" class="whatsapp-btn" target="_blank">
+                        💬 Comprar por WhatsApp
+                    </a>
                 </div>
             </div>
+        </section>
+    </div>
 
-            <!-- PRODUCTO 2 -->
-            <!-- 👇 CAMBIA ESTA IMAGEN POR TU PRENDA -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/2d3436/ffffff?text=PRENDA+2" alt="Producto 2" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-name">BUZO OVERSIZED STREETWEAR</h3>
-                    <div class="product-prices">
+    <!-- PÁGINA DE DETALLE PRODUCTO 2 - BUZO -->
+    <div id="productPage2" class="page">
+        <section class="product-detail">
+            <a href="#" class="back-btn" onclick="showHome()">← Volver a productos</a>
+            
+            <div class="product-container">
+                <div class="product-gallery">
+                    <img id="mainImg2" src="images/buzo1.jpg" alt="Buzo principal" class="main-image">
+                    
+                    <div class="thumbnail-container">
+                        <img src="images/buzo1.jpg" alt="Vista 1" class="thumbnail active" onclick="changeImage('mainImg2', 'images/buzo1.jpg', this)">
+                        <img src="images/buzo1-2.jpg" alt="Vista 2" class="thumbnail" onclick="changeImage('mainImg2', 'images/buzo1-2.jpg', this)">
+                        <img src="images/buzo1-3.jpg" alt="Vista 3" class="thumbnail" onclick="changeImage('mainImg2', 'images/buzo1-3.jpg', this)">
+                        <img src="images/buzo1-4.jpg" alt="Vista 4" class="thumbnail" onclick="changeImage('mainImg2', 'images/buzo1-4.jpg', this)">
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <h1>BUZO OVERSIZED STREETWEAR</h1>
+                    <div class="prices">
                         <span class="original-price">$45.990</span>
                         <span class="discount-price">$38.990</span>
                     </div>
+                    
+                    <p class="product-description">
+                        Buzo oversized con fit relajado perfecto para el día a día. 
+                        Confeccionado en algodón premium con interior suave. 
+                        Estilo urbano contemporáneo. Ideal para combinar con jeans o joggers.
+                    </p>
+
+                    <div class="size-selector">
+                        <h3>Seleccionar Talle:</h3>
+                        <div class="sizes">
+                            <button class="size-btn" onclick="selectSize(this)">S</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">L</button>
+                            <button class="size-btn" onclick="selectSize(this)">XL</button>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20el%20BUZO%20OVERSIZED" class="whatsapp-btn" target="_blank">
+                        💬 Comprar por WhatsApp
+                    </a>
                 </div>
             </div>
+        </section>
+    </div>
 
-            <!-- PRODUCTO 3 -->
-            <!-- 👇 CAMBIA ESTA IMAGEN POR TU PRENDA -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/b2bec3/ffffff?text=PRENDA+3" alt="Producto 3" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-name">CAMPERA DENIM CLASSIC</h3>
-                    <div class="product-prices">
+    <!-- PÁGINA DE DETALLE PRODUCTO 3 - CAMPERA -->
+    <div id="productPage3" class="page">
+        <section class="product-detail">
+            <a href="#" class="back-btn" onclick="showHome()">← Volver a productos</a>
+            
+            <div class="product-container">
+                <div class="product-gallery">
+                    <img id="mainImg3" src="images/campera1.jpg" alt="Campera principal" class="main-image">
+                    
+                    <div class="thumbnail-container">
+                        <img src="images/campera1.jpg" alt="Vista 1" class="thumbnail active" onclick="changeImage('mainImg3', 'images/campera1.jpg', this)">
+                        <img src="images/campera1-2.jpg" alt="Vista 2" class="thumbnail" onclick="changeImage('mainImg3', 'images/campera1-2.jpg', this)">
+                        <img src="images/campera1-3.jpg" alt="Vista 3" class="thumbnail" onclick="changeImage('mainImg3', 'images/campera1-3.jpg', this)">
+                        <img src="images/campera1-4.jpg" alt="Vista 4" class="thumbnail" onclick="changeImage('mainImg3', 'images/campera1-4.jpg', this)">
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <h1>CAMPERA DENIM CLASSIC</h1>
+                    <div class="prices">
                         <span class="original-price">$89.990</span>
                         <span class="discount-price">$79.990</span>
                     </div>
-                </div>
-            </div>
+                    
+                    <p class="product-description">
+                        Campera de jean clásica con corte moderno. Denim resistente y duradero. 
+                        Perfecta para cualquier ocasión. Cuello clásico y bolsillos frontales. 
+                        Un básico imprescindible en tu guardarropa.
+                    </p>
 
-            <!-- PRODUCTO 4 -->
-            <!-- 👇 CAMBIA ESTA IMAGEN POR TU PRENDA -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/74b9ff/ffffff?text=PRENDA+4" alt="Producto 4" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-name">PANTALÓN CARGO UTILITY</h3>
-                    <div class="product-prices">
-                        <span class="original-price">$52.990</span>
-                        <span class="discount-price">$44.990</span>
+                    <div class="size-selector">
+                        <h3>Seleccionar Talle:</h3>
+                        <div class="sizes">
+                            <button class="size-btn" onclick="selectSize(this)">S</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">L</button>
+                            <button class="size-btn" onclick="selectSize(this)">XL</button>
+                        </div>
                     </div>
+
+                    <a href="https://wa.me/5491112345678?text=Hola!%20Me%20interesa%20la%20CAMPERA%20DENIM" class="whatsapp-btn" target="_blank">
+                        💬 Comprar por WhatsApp
+                    </a>
                 </div>
             </div>
-
-            <!-- PRODUCTO 5 -->
-            <!-- 👇 CAMBIA ESTA IMAGEN POR TU PRENDA -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/a29bfe/ffffff?text=PRENDA+5" alt="Producto 5" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-name">SWEATER KNIT PREMIUM</h3>
-                    <div class="product-prices">
-                        <span class="original-price">$38.990</span>
-                        <span class="discount-price">$31.990</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRODUCTO 6 -->
-            <!-- 👇 CAMBIA ESTA IMAGEN POR TU PRENDA -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/fd79a8/ffffff?text=PRENDA+6" alt="Producto 6" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-name">REMERA GRAPHIC TEE</h3>
-                    <div class="product-prices">
-                        <span class="original-price">$26.990</span>
-                        <span class="discount-price">$19.990</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRODUCTO 7 -->
-            <!-- 👇 CAMBIA ESTA IMAGEN POR TU PRENDA -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/fdcb6e/ffffff?text=PRENDA+7" alt="Producto 7" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-name">SHORTS DEPORTIVOS PRO</h3>
-                    <div class="product-prices">
-                        <span class="original-price">$24.990</span>
-                        <span class="discount-price">$18.990</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRODUCTO 8 -->
-            <!-- 👇 CAMBIA ESTA IMAGEN POR TU PRENDA -->
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x500/00b894/ffffff?text=PRENDA+8" alt="Producto 8" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-name">CAMISA OXFORD SLIM FIT</h3>
-                    <div class="product-prices">
-                        <span class="original-price">$42.990</span>
-                        <span class="discount-price">$35.990</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Sobre Nosotros</h3>
-                <p>Tu tienda de ropa urbana con las últimas tendencias y estilos.</p>
+                <p>Ropa streetwear · Oversize · Limitada</p>
+                <p>© 2025 Neitor. Todos los derechos reservados.</p>
             </div>
             <div class="footer-section">
                 <h3>Contacto</h3>
-                <p>Email: info@tutienda.com</p>
+                <p>Email: info@neitortienda.com</p>
                 <p>Tel: +54 11 1234-5678</p>
                 <p>Buenos Aires, Argentina</p>
             </div>
             <div class="footer-section">
                 <h3>Enlaces Rápidos</h3>
-                <a href="#productos">Productos</a>
-                <a href="#envios">Envíos</a>
-                <a href="#cambios">Cambios y Devoluciones</a>
-                <a href="#faq">Preguntas Frecuentes</a>
+                <a href="#">Productos</a>
+                <a href="#">Envíos</a>
+                <a href="#">Cambios y Devoluciones</a>
+                <a href="#">Preguntas Frecuentes</a>
             </div>
             <div class="footer-section">
                 <h3>Síguenos</h3>
@@ -450,9 +684,46 @@
     </footer>
 
     <script>
+        // Toggle menú mobile
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
+        }
+
+        // Mostrar home
+        function showHome() {
+            document.getElementById('homePage').classList.add('active');
+            document.getElementById('productPage1').classList.remove('active');
+            document.getElementById('productPage2').classList.remove('active');
+            document.getElementById('productPage3').classList.remove('active');
+            window.scrollTo(0, 0);
+        }
+
+        // Mostrar página de producto
+        function showProduct(productId) {
+            document.getElementById('homePage').classList.remove('active');
+            document.getElementById('productPage1').classList.remove('active');
+            document.getElementById('productPage2').classList.remove('active');
+            document.getElementById('productPage3').classList.remove('active');
+            document.getElementById('productPage' + productId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        // Cambiar imagen principal
+        function changeImage(mainImgId, newSrc, thumbnail) {
+            document.getElementById(mainImgId).src = newSrc;
+            
+            // Remover clase active de todos los thumbnails del mismo producto
+            const container = thumbnail.parentElement;
+            container.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+
+        // Seleccionar talle
+        function selectSize(button) {
+            const container = button.parentElement;
+            container.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
         }
     </script>
 </body>
